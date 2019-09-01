@@ -1,10 +1,18 @@
-## Run in a Jupyter Notebook with all the CL HTML files
+# Run in a Jupyter Notebook session
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[]:
+
+
 from bs4 import BeautifulSoup
 import requests
-fileList = !ls *.html
+fileList = get_ipython().getoutput(u'ls *.html')
 cl_place = []
 cl_coords = []
 cl_title = []
+
+# In[ ]:
 
 for filename in fileList:
     soup = BeautifulSoup(open(filename), 'html.parser')
